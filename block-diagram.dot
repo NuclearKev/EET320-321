@@ -1,0 +1,9 @@
+strict digraph G {
+  label="DSO hooked to pin JB2"
+	Computer  [shape=box]
+	ZYBO	  [shape=box]
+	DSO    [shape=box]
+	Computer -> ZYBO [arrowhead=none, label="USB"]
+	Computer -> DSO [arrowhead=none, label="GPIB"]
+	ZYBO -> DSO [arrowhead=none label="Probe"]
+}
