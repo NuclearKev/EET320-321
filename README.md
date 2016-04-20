@@ -7,8 +7,8 @@ functions are but how accurate the DSO is and how long of a delay there is
 between setting an output pin high/low.
 
 The project will consist of 2 parts:
-* ZYBO
-* C#
+*  ZYBO
+*  C#
 
 ## Code
 The ZYBO project will basically accept some value from C# via serial then pass 
@@ -29,4 +29,7 @@ have a total of 10 points per measurement method (10 from private timer and 10
 from the DSO). Makes sense? Sure. 
 
 ## Data Analysis
-
+The analysis of the data will be done using R. There will mainly be percentage 
+errors (and differences) between the theoretical, private, and DSO data. I will 
+also graph the data to see if it gets less accurate with longer times. I suppose
+I could do some standard deviations to see if the data is consistent. 
