@@ -1,14 +1,19 @@
 # Testing the Accuracy of sleep() and usleep()
 
 ## Summary
-In this project, I will be measuring the accuracy of the unistd functions sleep 
-and usleep. The goal of the project is not just to see how accurate the 
-functions are but how accurate the DSO is and how long of a delay there is 
-between setting an output pin high/low.
+In this project, I will be measuring the accuracy of the unistd (C) functions
+sleep and usleep. The goal of the project is not just to see how accurate the
+functions are but how accurate the DSO is and see how long it takes the board
+to run the functions and set the output pin high/low.
 
 The project will consist of 2 parts:
 *  ZYBO
 *  C#
+
+The ZYBO will use the private timer to measure the sleep period. This value
+will be shipped to C# after it is complete. C# will control the DSO to measure
+the on time of the signal coming out of the ZYBO. This is what I will
+demonstrate.
 
 ## Code
 The ZYBO project will basically accept some value from C# via serial then pass 
@@ -19,14 +24,20 @@ same time.
 
 The C# project will send the ZYBO a number, this number being the amount of 
 time the user wishes to sleep. After sending out the number it will tell the DSO
-to do its thing. How the DSO will do "its thing," I don't know yet. Then both 
-values (private timer and DSO) will be placed into a C# spreadsheet.
+to do its thing. The DSO will adjust the time and voltage scales to get a
+waveform on-screen. Then it will grab all the data and ship it to C#. C# will
+then ask the DSO what the time increment value is and multiple it by the 
+number of data points (from the DSO) above 3V (ON).
+Then both values (private timer and DSO) will be placed into a C# spreadsheet
+and copied into an excel spreadsheet when done. This will then be exported to
+the CSV format for so that R can read it without any special libraries.
 
-The way test will be conducted has yet to be decided. I will probably run 10 
-tests per time amount for 10 time amounts. For example, using the sleep 
-function, I would run 10 tests (1 second to 10 seconds) and each second would 
-have a total of 10 points per measurement method (10 from private timer and 10 
-from the DSO). Makes sense? Sure. 
+## Testing
+To get an ample amount of data, I will run each test 10 times with 10 different
+values. These values ranging from small to large. For example, for the sleep
+function I plan on going from 1 second to 30 seconds. For usleep I will probably
+do something like 1 usecond to 1 second. Each second value will be done ten
+times to see how consistent the functions are. 
 
 ## Data Analysis
 The analysis of the data will be done using R. There will mainly be percentage 
