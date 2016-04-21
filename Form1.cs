@@ -31,21 +31,24 @@ namespace sleep_app
         {
             string privateTime, si = textBox1.Text;
             float dsoTime; 
-            dso1.clearOffset();
-            dso1.setScale(1.0F);
-            dso1.setCoupling(DSO.Coupling.DC);
-            dso1.setTrigerLevel(1.5F);
-            dso1.setTrigerSlopePos();
-            dso1.sweepNormal();
+            //dso1.clearOffset();
+            //dso1.setScale(1.0F);
+            //dso1.setCoupling(DSO.Coupling.DC);
+            //dso1.setTrigerLevel(1.5F);
+            //dso1.setTrigerSlopePos();
+            //dso1.sweepNormal();
+            dso1.clearMeasure();
             serialPort1.Open();
 
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 11; j++)
             {
                 serialPort1.WriteLine(si);
                 dsoTime = getHighTime();
                 privateTime = serialPort1.ReadLine();
                 this.dataGridView1.Rows[j].Cells[0].Value = Convert.ToDouble(privateTime) / 325000000;
                 this.dataGridView1.Rows[j].Cells[1].Value = dsoTime;
+                Thread.Sleep(2000);
+                dso1.clearMeasure();
             }   
                 
             serialPort1.Close();  
@@ -60,10 +63,10 @@ namespace sleep_app
             //    mode = "usleep";
             //}
 
-            var scaleText = Convert.ToSingle(.5F).ToString("E1");
-            dso1.setTimeScale(scaleText);
+            //var scaleText = Convert.ToSingle(.2F).ToString("E1");
+            //dso1.setTimeScale(scaleText);
             dso1.clearMeasure();
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             var data = dso1.getdata();
             var xinc = dso1.getXInc();
             var time = 0;
@@ -276,5 +279,22 @@ class DSO
         this.isDone();
         var data = data_int.Select((d) => (125 - d) * yinc - yor).ToArray();
         return data;
+    }
+
+    public float measurePeriod()
+    {
+        device.Write(":MEAS:PER?");     //y orgin
+        var period = device.ReadString();
+        float f = 0;
+        try
+        {
+            f = float.Parse(period);
+        }
+        catch
+        {
+            //weird error look at dmm
+            f = this.measurePeriod();
+        }
+        return f;
     }
 }
