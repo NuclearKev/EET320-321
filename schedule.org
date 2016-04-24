@@ -6,15 +6,15 @@
 	 - [X] Make sure output works
 	 - [X] Set up communications to for serial
 
-** TODO C# Project <2016-04-29 Fri>
+** DONE C# Project <2016-04-29 Fri>
 	 - [X] Get communication with ZYBO working
 	 - [X] Get automation working (ZYBO and C# only)
-	 - [ ] Get DSO to measure on time
-	 - [ ] Get automation working (all of it)
+	 - [X] Get DSO to measure on time
+	 - [X] Get automation working (all of it)
 
 ** TODO Collect Data <2016-05-02 Mon>
 	 - [ ] sleep data
-	 - [ ] usleep data
+	 - [X] usleep data
 
 ** TODO Analyze Data <2016-05-06 Fri>
 	 - [ ] Graph all data

@@ -19,7 +19,7 @@ namespace sleep_app
         public Form1()
         {
             InitializeComponent();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 11; i++)
             {
                 this.dataGridView1.Rows.Add();
             }
@@ -30,15 +30,26 @@ namespace sleep_app
         private void button1_Click(object sender, EventArgs e)
         {
             string privateTime, si = textBox1.Text;
-            float dsoTime; 
-            //dso1.clearOffset();
-            //dso1.setScale(1.0F);
+            float dsoTime, xScale = Convert.ToSingle(si); 
+            dso1.clearOffset();
+            dso1.setScale(1.0F);
             //dso1.setCoupling(DSO.Coupling.DC);
-            //dso1.setTrigerLevel(1.5F);
-            //dso1.setTrigerSlopePos();
+            dso1.setTrigerLevel(1.5F);
+            dso1.setTrigerSlopePos();
             //dso1.sweepNormal();
             dso1.clearMeasure();
+
+            if ((string)listBox1.SelectedItem == "usleep")
+            {
+                xScale = xScale / 1000000;
+            }
+
+            var scaleText = Convert.ToSingle(xScale).ToString("E1");
+            dso1.setTimeScale(scaleText);
+
             serialPort1.Open();
+
+            Thread.Sleep(1000);
 
             for (int j = 0; j < 11; j++)
             {
@@ -56,17 +67,8 @@ namespace sleep_app
 
         private float getHighTime()
         {
-            //var mode = "sleep";
-
-            //if (listBox1.SelectedItem == "usleep")
-           // {
-            //    mode = "usleep";
-            //}
-
-            //var scaleText = Convert.ToSingle(.2F).ToString("E1");
-            //dso1.setTimeScale(scaleText);
             dso1.clearMeasure();
-            //Thread.Sleep(2000);
+            //Thread.Sleep(3000);
             var data = dso1.getdata();
             var xinc = dso1.getXInc();
             var time = 0;
