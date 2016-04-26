@@ -51,10 +51,10 @@ namespace sleep_app
 
             Thread.Sleep(1000);
 
-            for (int j = 0; j < 11; j++)
+            for (int j = 0; j < 12; j++)
             {
                 serialPort1.WriteLine(si);
-                dsoTime = getHighTime();
+                dsoTime = getHighTime(Convert.ToInt32(si));
                 privateTime = serialPort1.ReadLine();
                 this.dataGridView1.Rows[j].Cells[0].Value = Convert.ToDouble(privateTime) / 325000000;
                 this.dataGridView1.Rows[j].Cells[1].Value = dsoTime;
@@ -65,10 +65,10 @@ namespace sleep_app
             serialPort1.Close();  
         }
 
-        private float getHighTime()
+        private float getHighTime(int waitTime)
         {
             dso1.clearMeasure();
-            //Thread.Sleep(3000);
+            Thread.Sleep(waitTime*5);
             var data = dso1.getdata();
             var xinc = dso1.getXInc();
             var time = 0;

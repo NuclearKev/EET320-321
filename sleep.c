@@ -40,6 +40,8 @@ int main() {
 
 		scanf("%u", &sleepTime);
 		if (sleepTime != 0){
+
+			sleep(sleepTime);
 			
 			XScuTimer_LoadTimer(&TimerInstance, CntValue1);
 			XScuTimer_Start(&TimerInstance);
