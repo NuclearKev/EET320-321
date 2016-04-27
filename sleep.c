@@ -53,7 +53,7 @@ int main() {
 			XScuTimer_Stop(&TimerInstance);
 			XGpio_DiscreteWrite(&SleepSignal, 1, 0);
 
-			sleep(sleepTime);
+			sleep(sleepTime*5);
 			
 			time = CntValue1 - CntValue2;
 

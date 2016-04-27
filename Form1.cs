@@ -19,7 +19,7 @@ namespace sleep_app
         public Form1()
         {
             InitializeComponent();
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 12; i++)
             {
                 this.dataGridView1.Rows.Add();
             }
@@ -68,7 +68,7 @@ namespace sleep_app
         private float getHighTime(int waitTime)
         {
             dso1.clearMeasure();
-            Thread.Sleep(waitTime*5);
+            Thread.Sleep(waitTime*5000);
             var data = dso1.getdata();
             var xinc = dso1.getXInc();
             var time = 0;
