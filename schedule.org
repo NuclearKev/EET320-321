@@ -12,8 +12,8 @@
 	 - [X] Get DSO to measure on time
 	 - [X] Get automation working (all of it)
 
-** TODO Collect Data <2016-05-02 Mon>
-	 - [ ] sleep data
+** DONE Collect Data <2016-05-02 Mon>
+	 - [X] sleep data
 	 - [X] usleep data
 
 ** TODO Analyze Data <2016-05-06 Fri>
