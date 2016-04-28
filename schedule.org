@@ -17,8 +17,8 @@
 	 - [X] usleep data
 
 ** TODO Analyze Data <2016-05-06 Fri>
-	 - [ ] Graph all data
-	 - [ ] Find standard deviations of DSO and private timer data
-	 - [ ] Find percent errors/differences between theoretical
-	 - [ ] Find difference between DSO and private timer data
+	 - [X] Graph all data
+	 - [X] Find standard deviations of DSO and private timer data
+	 - [X] Find percent errors/differences between theoretical
+	 - [X] Find difference between DSO and private timer data
 	 - [ ] Determine the delay
