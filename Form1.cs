@@ -55,6 +55,7 @@ namespace sleep_app
             {
                 serialPort1.WriteLine(si);
                 dsoTime = getHighTime(Convert.ToInt32(si));
+								// dsoTime = getHighTime(1);
                 privateTime = serialPort1.ReadLine();
                 this.dataGridView1.Rows[j].Cells[0].Value = Convert.ToDouble(privateTime) / 325000000;
                 this.dataGridView1.Rows[j].Cells[1].Value = dsoTime;

@@ -54,6 +54,7 @@ int main() {
 			XGpio_DiscreteWrite(&SleepSignal, 1, 0);
 
 			sleep(sleepTime*5);
+			/* usleep(sleepTime); */
 			
 			time = CntValue1 - CntValue2;
 
