@@ -22,3 +22,4 @@
 	 - [X] Find percent errors/differences between theoretical
 	 - [X] Find difference between DSO and private timer data
 	 - [ ] Determine the delay
+	 - [ ] Make a pretty table
