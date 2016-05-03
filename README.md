@@ -29,8 +29,7 @@ waveform on-screen. Then it will grab all the data and ship it to C#. C# will
 then ask the DSO what the time increment value is and multiple it by the 
 number of data points (from the DSO) above 3V (ON).
 Then both values (private timer and DSO) will be placed into a C# spreadsheet
-and copied into an excel spreadsheet when done. This will then be exported to
-the CSV format for so that R can read it without any special libraries.
+and copied into an excel spreadsheet when done. 
 
 ## Testing
 To get an ample amount of data, I will run each test 10 times with 10 different
@@ -40,7 +39,7 @@ do something like 1 usecond to 1 second. Each second value will be done ten
 times to see how consistent the functions are. 
 
 ## Data Analysis
-The analysis of the data will be done using R. There will mainly be percentage 
-errors (and differences) between the theoretical, private, and DSO data. I will 
-also graph the data to see if it gets less accurate with longer times. I suppose
-I could do some standard deviations to see if the data is consistent. 
+There will mainly be percentage errors (and differences) between the 
+theoretical, private, and DSO data. I will also graph the data to see if it gets
+less accurate with longer times. I suppose I could do some standard deviations 
+to see if the data is consistent. 

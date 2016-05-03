@@ -40,10 +40,11 @@ int main() {
 
 		scanf("%u", &sleepTime);
 		if (sleepTime != 0){
+
+			sleep(sleepTime);
 			
 			XScuTimer_LoadTimer(&TimerInstance, CntValue1);
 			XScuTimer_Start(&TimerInstance);
-
 			XGpio_DiscreteWrite(&SleepSignal, 1, 1);
 	
 			sleep(sleepTime);
@@ -52,6 +53,9 @@ int main() {
 			XScuTimer_Stop(&TimerInstance);
 			XGpio_DiscreteWrite(&SleepSignal, 1, 0);
 
+			sleep(sleepTime*5);
+			/* usleep(sleepTime); */
+			
 			time = CntValue1 - CntValue2;
 
 			printf("%u\n", time);
