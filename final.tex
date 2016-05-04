@@ -90,33 +90,120 @@
     
 \end{frame}
 
-\begin{frame}{Data for Private Timer}
-  \begin{tabular}{|l|l|l|l|}
-    \hline
-    Time & Average Measured & Standard Deviation & Percent Error\\
-    \hline
-    1 &  &  & \\ \hline
-    2 &  &  & \\ \hline
-    3 & 3.000000455 &  & \\ \hline
-    5 &  &  & \\ \hline
-    7 &  &  & \\ \hline
-    10 &  &  & \\ \hline
-    13 &  &  & \\ \hline
-    20 &  &  & \\ \hline
-    30 &  &  & \\ \hline
-    40 & 13.215283980 &  & \\
-    \hline
-  \end{tabular}
-
+\begin{frame}{sleep Data for Private Timer}
+  \begin{center}
+    \begin{tabular}{lrrr}
+      Time & Average Measured & Standard Deviation & Percent Error\\
+      \hline
+      1 & 1.00000044707692 & 1.542\,E-08 & 4.471\,E-05\\
+      2 & 2.00000040092308 & 1.369\,E-08 & 2.005\,E-05\\
+      3 & 3.00000044276923 & 1.707\,E-08 & 1.476\,E-05\\
+      5 & 5.00000044092308 & 1.897\,E-08 & 8.818\,E-06\\
+      7 & 7.00000041723077 & 2.088\,E-08 & 5.960\,E-06\\
+      10 & 10.0000004575385 & 1.257\,E-08 & 4.575\,E-06\\
+      13 & 13.0000004169231 & 1.537\,E-08 & 3.207\,E-06\\
+      20 & 13.2152839846154 & 0 & -33.92\\
+      30 & 13.2152839846154 & 0 & -55.95\\
+      40 & 13.2152839846154 & 0 & -66.962\\
+      \hline
+    \end{tabular}
+  \end{center}
   \small\emph{Note: Time, Average Measured, and Standard Deviation are in seconds}
 
 \end{frame}
 
-\begin{frame}{Data for DSO}
+\begin{frame}{sleep Data for DSO}
+  
+  \begin{center}
+    \begin{tabular}{lrrr}
+      Time & Average Measured & Standard Deviation & Percent Error\\
+      \hline
+      1 & 0.989 & 1.17\,E-16 & -0.01\\
+      2 & 1.98 & 0 & -1\\
+      3 & 2.971 & 2.846\,E-02 & -0.9667\\
+      5 & 4.95 & 9.362\,E-16 & -1\\
+      7 & 6.96 & 2.108\,E-02 & -0.5714\\
+      10 & 9.9 & 1.872\,E-15 & -1\\
+      13 & 12.95 & 0 & -0.3846\\
+      20 & 19.8 & 3.745\,E-15 & -1\\
+      30 & 29.8 & 3.745\,E-15 & -0.6667\\
+      40 & 39.8 & 7.49\,E-15 & -0.5\\
+      \hline
+    \end{tabular}
+  \end{center}
+  \small\emph{Note: Time, Average Measured, and Standard Deviation are in seconds}
 
 \end{frame}
 
+\begin{frame}{usleep Data for Private Timer}
+  \begin{center}
+    \begin{tabular}{lrrr}
+      Time & Average Measured & Standard Deviation & Percent Error\\
+      \hline
+      1u & 1.405\,E-06 & 1.452\,E-08 & 40.46\\
+      5u & 5.394\,E-06 & 6.454\,E-09 & 7.889\\
+      10u & 1.043\,E-05 & 3.163\,E-08 & 4.28\\
+      15u & 1.547\,E-05 & 1.038\,E-08 & 3.128\\
+      20u & 2.043\,E-05 & 3.773\,E-08 & 2.166\\
+      100u & 1.004\,E-04 & 1.88\,E-08 & 0.4358\\
+      1m & 1\,E-03 & 1.263\,E-08 & 4.252\,E-02\\
+      1.25m & 1.25\,E-03 & 2.211\,E-08 & 3.621\,E-02\\
+      10m & 1\,E-02 & 1.175\,E-08 & 4.286\,E-03\\
+      100m & .1 & 1.869\,E-08 & 4.514\,E-04\\
+      \hline
+    \end{tabular}
+  \end{center}
+  \small\emph{Note: Time, Average Measured, and Standard Deviation are in seconds}
+\end{frame}
+
+\begin{frame}{usleep Data for DSO}
+  \begin{center}
+    \begin{tabular}{lrrr}
+      Time & Average Measured & Standard Deviation & Percent Error\\
+      \hline
+      1u & 1.444\,E-06 & 8.433\,E-09 & 44.4\\
+      5u & 5.44\,E-06 & 2.108\,E-08 & 8.8\\
+      10u & 1.05\,E-05 & 6.667\,E-08 & 5\\
+      15u & 1.551\,E-05 & 3.162\,E-08 & 3.4\\
+      20u & 2.044\,E-05 & 1.265\,E-07 & 2.2\\
+      100u & 1.005\,E-04 & 5.27\,E-07 & 0.5\\
+      1m & 1.001\,E-03 & 3.162\,E-06 & 0.1\\
+      1.25m & 1.252\,E-03 & 1.033\,E-05 & 0.16\\
+      10m & 1\,E-02 & 1.829\,E-18 & 0\\
+      100m & 9.36\,E-02 & 5.164\,E-04 & -6.4\\
+      \hline
+    \end{tabular}
+  \end{center}
+  \small\emph{Note: Time, Average Measured, and Standard Deviation are in seconds}
+\end{frame}
+    
 \begin{frame}{Conclusion}
+  \begin{center}
+    \begin{tabular}{lrr}
+      & SD Private Timer & SD DSO\\
+      \hline
+      Max & 3.773\,E-08 & 2.846\,E-02\\
+      Min & 6.454\,E-09 & 0\\
+      Average & 1.757\,E-08 & 2.504\,E-03\\
+      \hline
+    \end{tabular}
+  \end{center}
+
+  \begin{center}
+    \begin{tabular}{lrr}
+      & Error Private Timer & Error DSO\\
+      \hline
+      Max & 40.46 & 44.4\\
+      Min & 3.207\,E-06 & 0\\
+      Average & 3.438 & 2.504\\
+      \hline
+    \end{tabular}
+  \end{center}
+  \center\small\emph{Note: Standard Deviations are in seconds}
+
+  \hfill
+  
+  Delay Time: about 43.2090ns
   %talk about accuracy of devices and the delay time
 \end{frame}
 
