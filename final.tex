@@ -86,6 +86,7 @@
   \item 10 tests per function
   \item Values per test range from low to high
   \item 10 data points per test
+  \item Private timer and DSO data is collected simultaneously
   \end{itemize}
     
 \end{frame}
@@ -95,16 +96,16 @@
     \begin{tabular}{lrrr}
       Time & Average Measured & Standard Deviation & Percent Error\\
       \hline
-      1 & 1.00000044707692 & 1.542\,E-08 & 4.471\,E-05\\
-      2 & 2.00000040092308 & 1.369\,E-08 & 2.005\,E-05\\
-      3 & 3.00000044276923 & 1.707\,E-08 & 1.476\,E-05\\
-      5 & 5.00000044092308 & 1.897\,E-08 & 8.818\,E-06\\
-      7 & 7.00000041723077 & 2.088\,E-08 & 5.960\,E-06\\
-      10 & 10.0000004575385 & 1.257\,E-08 & 4.575\,E-06\\
-      13 & 13.0000004169231 & 1.537\,E-08 & 3.207\,E-06\\
-      20 & 13.2152839846154 & 0 & -33.92\\
-      30 & 13.2152839846154 & 0 & -55.95\\
-      40 & 13.2152839846154 & 0 & -66.962\\
+      1 & 1 & 1.542\,E-08 & 4.471\,E-05\\
+      2 & 2 & 1.369\,E-08 & 2.005\,E-05\\
+      3 & 3 & 1.707\,E-08 & 1.476\,E-05\\
+      5 & 5 & 1.897\,E-08 & 8.818\,E-06\\
+      7 & 7 & 2.088\,E-08 & 5.960\,E-06\\
+      10 & 10 & 1.257\,E-08 & 4.575\,E-06\\
+      13 & 13 & 1.537\,E-08 & 3.207\,E-06\\
+      20 & 13.22 & 0 & -33.92\\
+      30 & 13.22 & 0 & -55.95\\
+      40 & 13.22 & 0 & -66.962\\
       \hline
     \end{tabular}
   \end{center}
@@ -201,10 +202,28 @@
   \end{center}
   \center\small\emph{Note: Standard Deviations are in seconds}
 
-  \hfill
+\end{frame}
+
+\begin{frame}{Conclusion}
+
+  \begin{itemize}
+    
+  \item Delay for XGpio\_DiscreteWrite: about 43.21ns on average
   
-  Delay Time: about 43.2090ns
-  %talk about accuracy of devices and the delay time
+  \item Delay for DSO: about 45.27ms on average
+
+  \end{itemize}
+
+  \centering
+  \includegraphics[width=100mm]{code.png}
+
+  
+\end{frame}
+
+\begin{frame}
+  
+
+  
 \end{frame}
 
 \end{document}
