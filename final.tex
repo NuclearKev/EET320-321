@@ -43,7 +43,7 @@
   \item Determine delay to set a pin high/low
 
   \end{itemize}
-  
+
 
 \end{frame}
 
@@ -56,11 +56,13 @@
 
 \begin{frame}{Functionality}
 
+  \pause
+
   \begin{itemize}
   \item User inputs value in C\#
   \item C\# sends value to the ZYBO
   \end{itemize}
-  
+
   \pause
 
   \begin{itemize}
@@ -68,9 +70,9 @@
   \item ZYBO starts private timer, sets JB2 high, and sleeps
   \item DSO collects its data
   \end{itemize}
-  
+
   \pause
-  
+
   \begin{itemize}
   \item Once finished, the ZYBO sends sleep value to C\#
   \item C\# reads all data off the DSO
@@ -88,7 +90,7 @@
   \item 10 data points per test
   \item Private timer and DSO data is collected simultaneously
   \end{itemize}
-    
+
 \end{frame}
 
 \begin{frame}{sleep Data for Private Timer}
@@ -114,7 +116,7 @@
 \end{frame}
 
 \begin{frame}{sleep Data for DSO}
-  
+
   \begin{center}
     \begin{tabular}{lrrr}
       Time & Average Measured & Standard Deviation & Percent Error\\
@@ -177,7 +179,7 @@
   \end{center}
   \small\emph{Note: Time, Average Measured, and Standard Deviation are in seconds}
 \end{frame}
-    
+
 \begin{frame}{Conclusion}
   \begin{center}
     \begin{tabular}{lrr}
@@ -207,24 +209,25 @@
 \begin{frame}{Conclusion}
 
   \begin{itemize}
-    
-  \item Delay for XGpio\_DiscreteWrite: about 43.21ns on average
-  
-  \item Delay for DSO: about 45.27ms on average
+
+  \item Delay from Private Timer: about 43.21ns on average
+
+  \item Delay from DSO: about 45.27ms on average
 
   \end{itemize}
+
+  \pause
 
   \centering
   \includegraphics[width=100mm]{code.png}
 
-  
+
 \end{frame}
 
 \begin{frame}
-  
 
-  
+
+
 \end{frame}
 
 \end{document}
-
